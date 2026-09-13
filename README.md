@@ -30,6 +30,21 @@ Traditional word-piece / subword tokenizers struggle with Persian orthography du
 - **Training Epochs:** 3 epochs (~10,386 steps)
 - **Final Validation Loss:** **`0.03755`**
 
+### 🎯 Official Sentence-Level Benchmark (SentenceBench - ICASSP 2025)
+
+Evaluated on the official **SentenceBench (ICASSP 2025)** test suite across 400 complex Persian sentences using the word-level batched inference pipeline:
+
+| Benchmark Subset | Number of Sentences | Phoneme Error Rate (PER) | Accuracy |
+| :--- | :--- | :--- | :--- |
+| **CommonVoice** | 88 | **8.55%** | **91.45%** |
+| **Mana-TTS** | 100 | **8.94%** | **91.06%** |
+| **Homograph Sentences** | 212 | **10.78%** | **89.22%** |
+| **Overall Performance** | **400** | **9.64%** | **90.36%** |
+
+* **Homograph Word Accuracy (Context-Free Prior):** **41.98%** (89 / 212)
+* **Sample Exact Matches (0.0% PER):** *«آیا باید حقیقت را به آنها بگوییم؟»* $\to$ `?AyAbAyadhaqiqatrAbe?AnhAbeguyim` (100% exact match).
+* **Complex Multi-Clause Sentences (< 4.0% PER):** *«که پیش از انقلاب به خوابگاه دختران و زنان نابینا اختصاصیافته بود...»* $\to$ **3.8% PER**.
+
 ### Sample Transcriptions
 
 | Persian Orthography | Model Output (Phonemes) | Note |
